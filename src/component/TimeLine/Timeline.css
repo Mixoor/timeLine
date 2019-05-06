@@ -1,0 +1,72 @@
+.timeLine-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 40px 0;
+}
+
+
+.timeLine-container::after{
+    content: " ";
+    background-color:rgba(214, 152, 152, 0.356);
+    position: absolute;
+    left: 50%;
+    width:4px;
+    height:100%;
+}
+
+
+
+.timeLine-container-item{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    width:50%;
+    margin: 10px 0;
+    position: relative;
+    cursor: pointer;
+
+    
+}
+
+.timeLine-container-item::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border:solid black;
+    border-width: 0 3px 3px 0;
+    bottom: calc(50% - 15px);
+    right:15px;
+    z-index: -10;
+    transform: rotate(-45deg);
+}
+
+.timeLine-container-item:nth-child(odd)::after{
+    transform: rotate(135deg);
+    left:15px
+
+}
+
+
+
+.timeLine-container-item:nth-child(odd){
+    align-self: flex-end;
+    justify-content: flex-start;
+    padding-right:0;
+    padding-left:30px;
+
+
+}
+
+
+.timeLine-container-item-content{
+    box-shadow:1px 0px 5px rgba(0, 0, 0, 0.2);
+    padding :10px;
+    width: 400px;
+    max-width:70%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    z-index: 1000;
+}
